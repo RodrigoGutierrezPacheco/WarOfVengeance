@@ -4,12 +4,17 @@ let ctx = lienzo.getContext("2d")
 // Naves / Objetos
 const halconImg = new Image()
 halconImg.src = "emissary.png";//Halcon Milenario
+console.log(halconImg);
 
 const estrellaImg = new Image();
 estrellaImg.src = "enemigo.png"//Estrella de la Muerte
+console.log(estrellaImg);
 
 const balasImg = new Image();
-balasImg.src = "balas1.png";//Balas Halcon
+balasImg.src = "./balas1.png";//Balas Halcon
+
+const disparoSonido = new Audio();
+disparoSonido.src = "./disparo.mp3";
 
 //Listado de Enemigos
 const enemy = [];
@@ -21,7 +26,7 @@ class Nave{
 		this.y = y;
 		this.w = w;
 		this.h = h;
-		this.color = "black";
+		this.color = color;
 		this.imagen = imagen;
 	}
 	avanzar(){
@@ -39,33 +44,41 @@ class Nave{
 	disparar(){
 		const balita  = new Balas(this.x +37  , this.y -35,25,20,balasImg);
 		rafaga.push(balita);
+		// document.addEventListener("keydown",(evento)=>{
+		// 	if(evento.code == "Space"){
+		// 		const sonido = new Audio()
+		// 	}
+		// })
+
 	}
 	morir(){}
 	dibujarse(){
+		ctx.fillStyle = "black"
 		ctx.fillRect(this.x, this.y, this.w, this.h, this.imagen);
 		ctx.drawImage(this.imagen, this.x, this.y, this.w, this.h);
-		ctx.fillStyle = "black"
 	}
 }
 
+//Enemigo 
 class Enemigo{
-	constructor(x,y,w,h,imagen,nivel){
+	constructor(x,y,w,h,color,image){
 		this.x = x;
 		this.y = y;
 		this.w = w;
-		this.y = y;
-		this.imagen = imagen;
-		this.nivel = nivel;
+		this.h = h;
+		this.color = "black";
+		this.image = image;
 	}
 	dibujarse(){
-		ctx.fillStyle = "black"
-		ctx.fillRect(this.x, this.y, this.w, this.h,this.imagen);
-		this.y -= 1;
-		ctx.drawImage(this.imagen, this.x, this.y, this.w, this.h);
+		ctx.fillStyle = "black";
+		ctx.fillRect(this.x, this.y, this.w, this.h, this.image);
+		ctx.drawImage(this.image, this.x, this.y, this.w, this.h);
+		this.y += .5;
 	}
+
 }
 
-//Funcion para escuchar teclas
+//Funcion para escuchar teclas 
 function teclas(milenario){
 	document.addEventListener("keydown",(evento)=>{
 		console.log("Tecla tocada: ",evento.code);
@@ -107,24 +120,39 @@ class Balas {
 } 
 
 
-// Dibujar piso
-function dibujarPiso(){
-	ctx.beginPath();
-	ctx.moveTo(10,0)
-	ctx.lineTo(10,500);
-	ctx.strokeStyle = "white";
-	ctx.stroke();
-	ctx.closePath();
-}
-dibujarPiso();
+// // Dibujar piso
+// function dibujarPiso(){
+// 	ctx.beginPath();
+// 	ctx.moveTo(10,0)
+// 	ctx.lineTo(10,500);
+// 	ctx.strokeStyle = "white";
+// 	ctx.stroke();
+// 	ctx.closePath();
+// }
+// dibujarPiso();
 
 
-//Crear Enemigos
-function enemigos(){
- const num = Math.floor(Math.random()*100)
- const enemigoss = new Enemigo(500,250,30,60,estrellaImg)
- enemy.push(enemigoss);
+// Crear Enemigos
+function crearEnemigos(){
+	const num = Math.round(Math.random()*1000)
+ if(num ===8){
+	 const estrella1 = new Enemigo(0,-50,100,100,"white",estrellaImg);
+	 const estrella2 = new Enemigo(100,-100,100,100,"white",estrellaImg);
+	 const estrella3= new Enemigo(200,-150,100,100,"white",estrellaImg);
+	 const estrella4 = new Enemigo(300,-200,100,100,"white",estrellaImg)
+	 const estrella5 = new Enemigo(400,-250,100,100,"white",estrellaImg)
+	 const estrella6 = new Enemigo(500,-300,100,100,"white",estrellaImg)
+	 const estrella7 = new Enemigo(600,-350,100,100,"white",estrellaImg)
+	 const estrella8 = new Enemigo(700,-400,100,100,"white",estrellaImg)
+	 const estrella9 = new Enemigo(800,-450,100,100,"white",estrellaImg)
+	 const estrella10 = new Enemigo(900,-500,100,100,"white",estrellaImg)
+	 
+	 
+	enemy.push(estrella1,estrella2,estrella3,estrella4,estrella5,estrella6,estrella7,estrella8,estrella9,estrella10);
+ }
+
 }  
+
 
 //Mostrar datos
 function mostrarDatos(tiempo,score,vida){
@@ -140,30 +168,49 @@ function iniciarJuego(){
 	let tiempo = 0;
 	let score = 0;
 	let vida = 100;
+	const estrella1 = new Enemigo(0,0,100,100,"white",estrellaImg)
+	const estrella2 = new Enemigo(100,-50,100,100,"white",estrellaImg)
+	const estrella3 = new Enemigo(200,-150,100,100,"white",estrellaImg)
+	const estrella4 = new Enemigo(300,-200,100,100,"white",estrellaImg)
+	const estrella5 = new Enemigo(400,-250,100,100,"white",estrellaImg)
+	const estrella6 = new Enemigo(500,-300,100,100,"white",estrellaImg)
+	const estrella7 = new Enemigo(600,-350,100,100,"white",estrellaImg)
+	const estrella8 = new Enemigo(700,-400,100,100,"white",estrellaImg)
+	const estrella9 = new Enemigo(800,-450,100,100,"white",estrellaImg)
+	const estrella10 = new Enemigo(900,-500,100,100,"white",estrellaImg)
 	const milenario = new Nave(400,190,100,100,"black",halconImg);//halcon
 	teclas(milenario);
-	const muerte = new Nave (50,-50,40,40,"black",estrellaImg);//estrellaMuerte
-
-
-
+	
+	
+	
+	
 	setInterval(()=>{
 		ctx.clearRect(0,0,1000,500);
-		// dibujarPiso();
 		tiempo +=1;
-		milenario.dibujarse();
-		muerte.dibujarse();
-		console.log(muerte);
-		mostrarDatos(tiempo,score,vida);
-		rafaga.forEach((balas)=>{
+		milenario.dibujarse();//milenario
+		estrella1.dibujarse();
+		estrella2.dibujarse();
+		estrella3.dibujarse();
+		estrella4.dibujarse();
+		estrella5.dibujarse();
+		estrella6.dibujarse();
+		estrella7.dibujarse();//estrella 
+		estrella8.dibujarse();
+		estrella9.dibujarse();
+		estrella10.dibujarse();
+		
+		rafaga.forEach((balas)=>{//Balas
 			balas.dibujarse();
 		})
-
-		enemy.forEach((enemigoss,index)=>{
-			muerte.dibujarse();
-			console.log(muerte)
+		enemy.forEach((enemigos)=>{
+			if(enemigos.y <= 100){
+				milenario.vida-=10;
+			}
+			enemigos.dibujarse();
 		})
-
-	},1000/60);
-
+		crearEnemigos();
+		mostrarDatos(tiempo,score,vida);//mostrar datos
+	},1000/100);
 }
-iniciarJuego();
+		iniciarJuego();
+		
