@@ -128,7 +128,7 @@ class Balas {
 
 // Crear Enemigos
 function crearEnemigos(){
-	const num = Math.floor(Math.random()*1000)
+	const num = Math.floor(Math.random()*800)
  if(num ===100){
 	 const estrella1 = new Enemigo(10,0,100,100,"white",estrellaImg);
 	 const estrella2 = new Enemigo(130,-100,100,100,"white",estrellaImg);
@@ -169,11 +169,13 @@ function iniciarJuego(){
 	
 	
 	idInterval = setInterval(()=>{
-		if(score >= 10){
-			alert("WIN!")
-		}else if(vida <= 0){
-			alert(":(")
-		}
+    if(vida <= 0){
+			const openModal = document.querySelector(".modal_container");
+        openModal.style.opacity = 1;
+
+      // openModal.classList.add("modal-show")
+		}; 
+		
 		ctx.clearRect(0,0,1000,500);
 		tiempo +=1;
 		milenario.dibujarse();//milenario

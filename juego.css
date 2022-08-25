@@ -38,3 +38,63 @@ a{
 	top: 330px;
 	left: 60px;
 }
+/* 
+.modal{
+	position: fixed;
+	background-color:none;
+	display: flex;
+	opacity: 0;
+	pointer-events: none;
+} */
+
+.modal-show{
+	opacity: 1;
+	pointer-events: unset;
+}
+
+.modal_container{
+	margin: auto;
+	width: 200px;
+	height: 300px;
+	background-color: rgb(255, 255, 255);
+	border-radius: 6px;
+	padding: 3em 2.5em;
+  display: grid;	
+	place-items: center;
+	grid-auto-columns: 100%;
+	opacity:0;
+	z-index: 99;
+	position: relative;
+}
+
+.modal_title{
+	font-size: 2.5rem;
+}
+
+.modal_pharagraph{
+	margin-top: 0px;
+	margin-bottom:0px;
+	margin-left: 50px;
+	font-size: 15px;
+	color: black;
+}
+
+.flechas{
+	margin-left: 110px;
+	background-color: aqua;
+}
+
+
+.modal_close{
+	font-weight: 100;
+	color: black;
+	font-size: 50px;
+	margin-top: 0px;
+}
+
+
+
+.modal_close:hover{
+	color: rgb(255, 0, 0);
+	margin: 1 solid black;
+}
