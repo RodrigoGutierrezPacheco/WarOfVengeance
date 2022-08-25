@@ -133,25 +133,26 @@ class Balas {
 
 
 
+
 // Crear Enemigos
 function crearEnemigos(){
-	const num = Math.floor(Math.random()*1000)
+	setInterval(() => {
+		const num = Math.floor(Math.random()*800)
  if(num ===100){
-	 const estrella1 = new Enemigo(5,0,50,50,"white",estrellaImg);
-	 const estrella2 = new Enemigo(55,-50,50,50,"white",estrellaImg);
-	 const estrella3= new Enemigo(105,-150,50,50,"white",estrellaImg);
-	 const estrella4 = new Enemigo(155,-325,50,50,"white",estrellaImg)
-	 const estrella5 = new Enemigo(205,-350,50,50,"white",estrellaImg)
-	 const estrella6 = new Enemigo(255,-425,50,50,"white",estrellaImg)
-	 const estrella7 = new Enemigo(305,-450,50,50,"white",estrellaImg)
-	 const estrella8 = new Enemigo(355,-500,50,50,"white",estrellaImg)
 
-	 
+
+	const estrella1 = new Enemigo(5,0,50,50,"white",estrellaImg);
+	const estrella2 = new Enemigo(55,-50,50,50,"white",estrellaImg);
+	const estrella3= new Enemigo(105,-150,50,50,"white",estrellaImg);
+	const estrella4 = new Enemigo(155,-325,50,50,"white",estrellaImg)
+	const estrella5 = new Enemigo(205,-350,50,50,"white",estrellaImg)
+	const estrella6 = new Enemigo(255,-425,50,50,"white",estrellaImg)
+	const estrella7 = new Enemigo(305,-450,50,50,"white",estrellaImg)
+	const estrella8 = new Enemigo(355,-500,50,50,"white",estrellaImg)
 	 
 	 enemy.push(estrella1,estrella2,estrella3,estrella4,estrella5,estrella6,estrella7,estrella8);
  }
-
-}  
+	}, 2000);}
 
 
 //Mostrar datos
@@ -190,11 +191,15 @@ function iniciarJuego(){
 	
 	
 	idInterval = setInterval(()=>{
-		if(score >= 10){
-			alert("WIN!")
-		}else if(vida <= 0){
-			alert(":(")
-		}
+    if(vida <= 0){
+			const openModal = document.querySelector(".modal_container");
+        openModal.style.opacity = 1;
+				clearInterval(idInterval)
+				milenario.dibujarse();//milenario
+
+      // openModal.classList.add("modal-show")
+		}; 
+		
 		ctx.clearRect(0,0,1000,500);
 		tiempo +=1;
 		milenario.dibujarse();//milenario
