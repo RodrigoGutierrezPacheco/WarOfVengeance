@@ -6,7 +6,7 @@ let ctx = lienzo.getContext("2d")
 
 // Naves / Objetos
 const halconImg = new Image()
-halconImg.src = "emissary.png";//Halcon Milenario
+halconImg.src = "Emissary.png";//Halcon Milenario
 //verificar imagen
 
 const estrellaImg = new Image();
