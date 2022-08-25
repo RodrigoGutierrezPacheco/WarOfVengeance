@@ -5,8 +5,6 @@ btnStart.addEventListener("click",()=>{
 })
 
 
-let flechaDerecha = document.querySelector(".flechaDerecha")
-let fire = document.querySelector(".fire")
 
 
 
@@ -173,9 +171,19 @@ function iniciarJuego(){
 	let vida = 100;
 	const milenario = new Nave(220,190,50,50,"black",halconImg);//halcon
 	let flechaIzquierda = document.querySelector(".flechaIzquierda")
-flechaIzquierda.addEventListener("click",()=>{
+  flechaIzquierda.addEventListener("click",()=>{
 	milenario.izquierda();
-})
+  })
+  let flechaDerecha = document.querySelector(".flechaDerecha")
+  flechaDerecha.addEventListener("click",()=>{
+	milenario.derecha();
+  })
+	let fire = document.querySelector(".fire")
+  fire.addEventListener("click",()=>{
+	milenario.disparar();
+  })
+
+
 	teclas(milenario);
 	
 

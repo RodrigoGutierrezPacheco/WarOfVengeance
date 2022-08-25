@@ -128,7 +128,8 @@ class Balas {
 
 // Crear Enemigos
 function crearEnemigos(){
-	const num = Math.floor(Math.random()*800)
+	setInterval(() => {
+		const num = Math.floor(Math.random()*800)
  if(num ===100){
 	 const estrella1 = new Enemigo(10,0,100,100,"white",estrellaImg);
 	 const estrella2 = new Enemigo(130,-100,100,100,"white",estrellaImg);
@@ -143,6 +144,8 @@ function crearEnemigos(){
 	 
 	 enemy.push(estrella1,estrella2,estrella3,estrella4,estrella5,estrella6,estrella7,estrella8);
  }
+	}, 2000);
+	
 
 }  
 
@@ -172,6 +175,7 @@ function iniciarJuego(){
     if(vida <= 0){
 			const openModal = document.querySelector(".modal_container");
         openModal.style.opacity = 1;
+				clearInterval(idInterval)
 
       // openModal.classList.add("modal-show")
 		}; 
