@@ -53,9 +53,9 @@ class Nave{
 	}
 	morir(){}
 	dibujarse(){
+		ctx.drawImage(this.imagen, this.x, this.y, this.w, this.h);
 		ctx.fillStyle = "black"
 		// ctx.fillRect(this.x, this.y, this.w, this.h, this.imagen);
-		ctx.drawImage(this.imagen, this.x, this.y, this.w, this.h);
 	}
 }
 
@@ -171,13 +171,14 @@ function iniciarJuego(){
 			const openModal = document.querySelector(".modal_container");
         openModal.style.opacity = 1;
 				clearInterval(idInterval)
+				milenario.dibujarse();//milenario
 
       // openModal.classList.add("modal-show")
 		}; 
 		
 		ctx.clearRect(0,0,1000,500);
 		tiempo +=1;
-		milenario.dibujarse();//milenario
+		milenario.dibujarse();
 		crearEnemigos();
 
 		enemy.forEach((enemigos,index)=>{
