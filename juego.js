@@ -1,8 +1,3 @@
-let btnStart = document.querySelector(".start")
-btnStart.addEventListener("click",()=>{
-	clearInterval(idInterval)
-	iniciarJuego();
-})
 
 let idInterval
 const lienzo = document.getElementById("lienzo");
@@ -212,5 +207,11 @@ function iniciarJuego(){
 		});
 	},1000/60);
 }
+let btnStart = document.querySelector(".start")
+btnStart.addEventListener("click",()=>{
+	clearInterval(idInterval)
+	iniciarJuego();
+})
+
 
 
