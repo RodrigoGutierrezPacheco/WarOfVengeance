@@ -104,3 +104,47 @@ margin-left: 100px;
 	color: rgb(255, 0, 0);
 	margin: 1 solid black;
 }
+
+@media (max-width:320px){
+ .wov{
+	margin-left: 40px;
+ }
+
+ .startOne{
+  display: flex;
+ }
+  
+ #lienzo{
+	width: 99%;
+	height: 200px;
+ }
+
+ .btn-start{
+	margin-left: 20px;
+	margin-top: 9px;
+ }
+
+.buttons{
+	display: flex;
+	flex-direction: row;
+	margin-left: 1px;
+}
+
+.fire{
+	margin-left: 100px;
+}
+
+.flechaIzquierda{
+	margin-left: px;
+}
+}
+
+/* @media(min-width: 400px) and (max-width: 376px){
+	.buttons{
+		display: flex;
+	}
+
+	.wov{
+		color: black;
+	}
+} */
