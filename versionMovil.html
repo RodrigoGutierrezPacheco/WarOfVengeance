@@ -4,32 +4,35 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="versionMovil.css">
+	<link rel="stylesheet" href="juego.css">
 	<title>War Of Vengeance</title>
 </head>
 <body>
 	<div class="principal">
-		<div class="startOne">
-			<a class="wov">WOV</a>
-			<img class="btn-start" src="boton1.jpeg" width="100" height="100">
+			<a class="WOV">War</a>
+			<img src="boton1.jpeg" width="100" height="100">
 		</div>
-		<canvas id="lienzo" width="500" height="250"></canvas>
-		<audio src="amon amarth 1 tottg" autoplay=""></audio>
-		<audio src="disparo.mp3" id="disparo"></audio>
-			<div class="flechaDerechaIzquierda">
-				<div class="buttons">
-					<img src="flecha izquierda.png" alt="" class="flechaIzquierda">
-					<img src="flecha derecha.png" alt="" class="flechaDerecha">
-					<img src="disparo.png" class="fire" width="70">
-				</div>
-				<div class="modal_container">
-					<h2 class="modal_title">Perdimos la batalla!</h2>
-					<a href="versionMovil.html" class="modal_close">Volver a intentar</a>
-				</div>
-				<audio src="disparo.mp3" id="disparo"></audio>
+		<canvas id="lienzo"></canvas>
+		<audio src="amon amarth 1 tottg" autoplay=""  volume="50%"></audio>
+		<div class="start">
+		<div class="flechaDerechaIzquierda">
+			<div class="buttons">
+				<img src="flecha izquierda.png" alt="" class="flechaIzquierda">
+				<img src="flecha derecha.png" alt="" class="flechaDerecha">
+				<img src="disparo.png" class="fire" width="70">
 			</div>
+			<div class="modal_container">
+				<h2 class="modal_title">Perdimos la batalla!</h2>
+				<a href="versionMovil.html" class="modal_close">Volver a intentar</a>
+			</div>
+			<audio src="disparo.mp3" id="disparo"></audio>
 		</div>
+		<div class="modal_container">
+			<h2 class="modal_title">Perdimos la batalla!</h2>
+			<a href="juego.html" class="modal_close">Volver a intentar</a>
+		</div>
+		<audio src="disparo.mp3" id="disparo"></audio>
 	</div>
-	<script src="versionMovil.js"></script>
+	<script src="juego.js"></script>
 </body>
 </html>

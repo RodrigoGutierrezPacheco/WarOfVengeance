@@ -91,3 +91,20 @@ a{
 	color: rgb(255, 0, 0);
 	margin: 1 solid black;
 }
+
+@media(max-width:425px){
+#lienzo{
+	left:10px;
+	top:200px;
+}
+
+.principal{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.WOV{
+	font-size: 50px;
+}
+}

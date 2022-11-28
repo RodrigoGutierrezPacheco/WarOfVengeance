@@ -232,5 +232,3 @@ function iniciarJuego(){
 		});
 	},1000/60);
 }
-
-
