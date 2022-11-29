@@ -186,13 +186,10 @@ function iniciarJuego(){
 	
 	
 	idInterval = setInterval(()=>{
-    if(vida <= 0){
-			const openModal = document.querySelector(".modal_container");
-        openModal.style.opacity = 1;
-				clearInterval(idInterval)
-				milenario.dibujarse();//milenario
-
-      // openModal.classList.add("modal-show")
+    if(vida <=490){
+			alert("Perdiste")
+			clearInterval(idInterval)
+			window.location.reload()
 		}; 
 		
 		ctx.clearRect(0,0,1000,500);
