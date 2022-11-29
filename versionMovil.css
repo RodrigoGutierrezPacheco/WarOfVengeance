@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
-
 *{
 	margin: 0%;
 	padding: 0%;
@@ -17,6 +16,7 @@ canvas{
 	position: absolute;
 	border-radius: 5px;
 	border: 4px solid white;
+	
 
 }
 
@@ -28,14 +28,17 @@ a{
 	justify-content: center;
 	color: white;
 	margin-top: 30px;
+	
 }
 
 .start{
 	object-fit:none ;
 	position: absolute;
-	top: 330px;
+	top: 33px;
 	left: 60px;
 }
+
+
 
 .modal-show{
 	opacity: 1;
@@ -73,6 +76,11 @@ a{
 .flechas{
 	margin-left: 110px;
 	background-color: aqua;
+	
+}
+
+.flechaIzquierda{
+	margin-top: 300px;
 }
 
 
@@ -111,6 +119,11 @@ a{
 	
 	.buttons{
 		margin-top: 100px;
+		left: 10px;
+	}
+
+	.flechaDerecha{
+		margin-right:20px ;
 	}
 	
 	.modal_container{
@@ -118,6 +131,11 @@ a{
 		margin-left: -45px;
 		height: 250px;
 		width: 100%;
+	}
+
+	.botonInicio{
+		top:1000px;
+		background-color: red;
 	}
 	
 	.modal_title{

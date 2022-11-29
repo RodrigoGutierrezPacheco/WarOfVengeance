@@ -1,8 +1,3 @@
-let btnStart = document.querySelector(".start")
-btnStart.addEventListener("click",()=>{
-	clearInterval(idInterval)
-	iniciarJuego();
-})
 
 
 
@@ -158,7 +153,7 @@ function crearEnemigos(){
 //Mostrar datos
 function mostrarDatos(tiempo,score,vida){
 	ctx.fillStyle = "white";
-	ctx.font = "10px Montserrat";
+	ctx.font = "7px Montserrat";
 	ctx.fillText(`Tiempo : ${tiempo}` ,5,10);
 	ctx.fillText(`Score: ${score}`,5,25)
 	ctx.fillText(`Vida: ${vida}`,5,40)
@@ -232,3 +227,10 @@ function iniciarJuego(){
 		});
 	},1000/60);
 }
+
+let btnStart = document.querySelector(".start")
+btnStart.addEventListener("click",()=>{
+	clearInterval(idInterval)
+	iniciarJuego();
+})
+
