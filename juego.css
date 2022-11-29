@@ -92,7 +92,7 @@ a{
 	margin: 1 solid black;
 }
 
-@media(max-width:376px){
+@media(max-width:426px){
 #lienzo{
 	left:10px;
 	top:150px;
