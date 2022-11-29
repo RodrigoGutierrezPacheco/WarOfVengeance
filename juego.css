@@ -92,7 +92,7 @@ a{
 	margin: 1 solid black;
 }
 
-@media(max-width:425px){
+@media(max-width:320px){
 #lienzo{
 	left:10px;
 	top:200px;
@@ -106,5 +106,14 @@ a{
 
 .WOV{
 	font-size: 50px;
+}
+
+.buttons{
+	margin-top: 100px;
+}
+
+.modal_container{
+	margin-top: -400px;
+	margin-left: -46px;
 }
 }

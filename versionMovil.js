@@ -56,7 +56,7 @@ class Nave{
 		this.x -=30;
 	}
 	disparar(){
-		const balita  = new Balas(this.x +19 , this.y -17,12,10,balasImg);
+		const balita  = new Balas(this.x +6 , this.y -17,12,10,balasImg);
 		rafaga.push(balita);
 		// document.addEventListener("keydown",(evento)=>{
 		// 	if(evento.code == "Space"){
@@ -141,14 +141,14 @@ function crearEnemigos(){
  if(num ===100){
 
 
-	const estrella1 = new Enemigo(5,0,50,50,"white",estrellaImg);
-	const estrella2 = new Enemigo(55,-50,50,50,"white",estrellaImg);
-	const estrella3= new Enemigo(105,-150,50,50,"white",estrellaImg);
-	const estrella4 = new Enemigo(155,-325,50,50,"white",estrellaImg)
-	const estrella5 = new Enemigo(205,-350,50,50,"white",estrellaImg)
-	const estrella6 = new Enemigo(255,-425,50,50,"white",estrellaImg)
-	const estrella7 = new Enemigo(305,-450,50,50,"white",estrellaImg)
-	const estrella8 = new Enemigo(355,-500,50,50,"white",estrellaImg)
+	const estrella1 = new Enemigo(5,0,25,25,"white",estrellaImg);
+	const estrella2 = new Enemigo(35,-50,25,25,"white",estrellaImg);
+	const estrella3= new Enemigo(65,-150,25,25,"white",estrellaImg);
+	const estrella4 = new Enemigo(95,-325,25,25,"white",estrellaImg)
+	const estrella5 = new Enemigo(125,-350,25,25,"white",estrellaImg)
+	const estrella6 = new Enemigo(155,-425,25,25,"white",estrellaImg)
+	const estrella7 = new Enemigo(185,-450,25,25,"white",estrellaImg)
+	const estrella8 = new Enemigo(215,-500,25,25,"white",estrellaImg)
 	 
 	 enemy.push(estrella1,estrella2,estrella3,estrella4,estrella5,estrella6,estrella7,estrella8);
  }
@@ -159,9 +159,9 @@ function crearEnemigos(){
 function mostrarDatos(tiempo,score,vida){
 	ctx.fillStyle = "white";
 	ctx.font = "10px Montserrat";
-	ctx.fillText(`Tiempo : ${tiempo}` ,15,20);
-	ctx.fillText(`Score: ${score}`,15,50)
-	ctx.fillText(`Vida: ${vida}`,15,80)
+	ctx.fillText(`Tiempo : ${tiempo}` ,5,10);
+	ctx.fillText(`Score: ${score}`,5,25)
+	ctx.fillText(`Vida: ${vida}`,5,40)
 } 
 
 
@@ -169,8 +169,8 @@ function mostrarDatos(tiempo,score,vida){
 function iniciarJuego(){
 	let tiempo = 0;
 	let score = 0;
-	let vida = 100;
-	const milenario = new Nave(220,190,50,50,"black",halconImg);//halcon
+	let vida = 500;
+	const milenario = new Nave(125,115,25,25,"black",halconImg);//halcon
 	let flechaIzquierda = document.querySelector(".flechaIzquierda")
   flechaIzquierda.addEventListener("click",()=>{
 	milenario.izquierda();
