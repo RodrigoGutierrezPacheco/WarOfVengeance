@@ -1,11 +1,37 @@
-
-
-
-
-
 let idInterval
 const lienzo = document.getElementById("lienzo");
 let ctx = lienzo.getContext("2d")
+
+// Añadir event listeners para eventos táctiles
+lienzo.addEventListener("touchstart", handleTouchStart, false);
+lienzo.addEventListener("touchmove", handleTouchMove, false);
+
+let touchStartX = 0;
+let touchStartY = 0;
+function handleTouchStart(event) {
+  event.preventDefault();
+
+  touchStartX = event.touches[0].clientX;
+  touchStartY = event.touches[0].clientY;
+}
+
+function handleTouchMove(event) {
+  event.preventDefault();
+
+  let touchMoveX = event.touches[0].clientX;
+  let touchMoveY = event.touches[0].clientY;
+
+  let deltaX = touchMoveX - touchStartX;
+  let deltaY = touchMoveY - touchStartY;
+
+  // Asume que la nave es accesible como milenario
+  milenario.x += deltaX;
+  milenario.y += deltaY;
+
+  // Actualiza las coordenadas iniciales para el próximo movimiento
+  touchStartX = touchMoveX;
+  touchStartY = touchMoveY;
+}
 
 
 // Naves / Objetos
